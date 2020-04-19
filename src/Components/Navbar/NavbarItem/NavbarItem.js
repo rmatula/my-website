@@ -1,19 +1,16 @@
-import React from './node_modules/react';
+import React from 'react';
 import './NavbarItem.css';
+import { Link } from 'react-router-dom';
 
-class NavbarItem extends React.Component {
-  render() {
-    return (
-      <li className="nav-item">
-        <a href="#" className="nav-link">
-          <div className="nav-svg">
-            <img height="50" width="50" src={this.props.svgSource} alt="" />
-          </div>
-          <span className="link-text">{this.props.svgText}</span>
-        </a>
-      </li>
-    );
-  }
-}
+const NavbarItem = ({ icon, text, href }) => (
+  <li className="nav-item">
+    <Link to={href} className="nav-link">
+      <div className="nav-svg">
+        <img height="50" width="50" src={icon} alt="" />
+      </div>
+      <span className="link-text">{text}</span>
+    </Link>
+  </li>
+);
 
 export default NavbarItem;

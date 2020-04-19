@@ -5,23 +5,27 @@ import Projects from '../assets/icons/project1.svg';
 
 export const navItemList = [
   {
-    svgSource: About,
-    svgText: 'About',
+    icon: About,
+    text: 'About',
+    href: 'about',
+    key: 0,
+  },
+  {
+    icon: Github,
+    text: 'Github',
+    href: 'github',
     key: 1,
   },
   {
-    svgSource: Github,
-    svgText: 'Github',
+    icon: Projects,
+    text: 'Projects',
+    href: 'projects',
     key: 2,
   },
   {
-    svgSource: Projects,
-    svgText: 'Projects',
+    icon: Contact,
+    text: 'Contact',
+    href: 'contact',
     key: 3,
-  },
-  {
-    svgSource: Contact,
-    svgText: 'Contact',
-    key: 4,
   },
 ];

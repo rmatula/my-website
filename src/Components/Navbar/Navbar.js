@@ -1,23 +1,25 @@
-import React, { Component } from './node_modules/react';
+import React from 'react';
 import './Navbar.css';
-import { navItem } from '../../constants/navItemList';
+import { Route, Switch } from 'react-router-dom';
 
+import { navItemList } from '../../constants/navItemList';
 import NavbarItem from './NavbarItem/NavbarItem';
 
-export default function Navbar() {
-  return (
-    <div className="navbar">
-      <ul className="navbar-nav">
-        {this.state.navItems.map((navItem) => {
-          return (
-            <NavbarItem
-              svgSource={navItem.svgSource}
-              svgText={navItem.svgText}
-              key={navItem.key}
-            />
-          );
-        })}
-      </ul>
-    </div>
-  );
-}
+const Navbar = () => (
+  <div className="navbar">
+    <ul className="navbar-nav">
+      {navItemList.map((navItem) => {
+        return (
+          <NavbarItem
+            href={navItem.href}
+            icon={navItem.icon}
+            text={navItem.text}
+            key={navItem.key}
+          />
+        );
+      })}
+    </ul>
+  </div>
+);
+
+export default Navbar;
