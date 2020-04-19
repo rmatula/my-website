@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 import './App.css';
 import Navbar from '../Navbar/Navbar';
 import Main from '../Main/Main';
