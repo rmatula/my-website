@@ -1,69 +1,23 @@
 import React, { Component } from 'react';
 import './Navbar.css';
-class Navbar extends Component {
-  render() {
-    return (
-      <div className="navbar">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <div className="nav-svg">
-                <img
-                  height="50"
-                  width="50"
-                  src={require('./Navbar-icons/identification1.svg')}
-                  alt=""
-                />
-              </div>
-              <span className="link-text">About</span>
-            </a>
-          </li>
+import { navItem } from '../../constants/navItemList';
 
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <div className="nav-svg">
-                <img
-                  height="50"
-                  width="50"
-                  src={require('./Navbar-icons/github1.svg')}
-                  alt=""
-                />
-              </div>
-              <span className="link-text">Github</span>
-            </a>
-          </li>
+import NavbarItem from './NavbarItem/NavbarItem';
 
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <div className="nav-svg">
-                <img
-                  height="50"
-                  width="50"
-                  src={require('./Navbar-icons/project1.svg')}
-                  alt=""
-                />
-              </div>
-              <span className="link-text">Projects</span>
-            </a>
-          </li>
-
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <div className="nav-svg">
-                <img
-                  height="50"
-                  width="50"
-                  src={require('./Navbar-icons/contact1.svg')}
-                  alt=""
-                />
-              </div>
-              <span className="link-text">Contact</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    );
-  }
+export default function Navbar() {
+  return (
+    <div className="navbar">
+      <ul className="navbar-nav">
+        {this.state.navItems.map((navItem) => {
+          return (
+            <NavbarItem
+              svgSource={navItem.svgSource}
+              svgText={navItem.svgText}
+              key={navItem.key}
+            />
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
-
-export default Navbar;

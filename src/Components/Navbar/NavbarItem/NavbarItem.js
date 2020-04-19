@@ -1,8 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './NavbarItem.css';
 
 class NavbarItem extends React.Component {
   render() {
-    return <div></div>;
+    return (
+      <li className="nav-item">
+        <a href="#" className="nav-link">
+          <div className="nav-svg">
+            <img height="50" width="50" src={this.props.svgSource} alt="" />
+          </div>
+          <span className="link-text">{this.props.svgText}</span>
+        </a>
+      </li>
+    );
   }
 }
 
